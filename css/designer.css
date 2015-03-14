@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+@import url("layout.css");
+
+#designerPlace {
+	width:60%;
+	border:1px solid black;
+	float:left;
+	padding:4px;
+
+}
+#propertiesPlace {
+	width:35%;
+	height:200px;
+	border:1px solid black;
+	float:right;
+	padding:4px;
+}
+#createdForm {
+	position:relative;
+width:60%;
+	left:0px;
+	float:left;
+	padding:4px;
+	border:1px solid black;
+}
+
+#definitiveForm{
+
+	padding:4px;
+}
+#activeArea {
+	width:100%;	
+	float:left;
+	padding:4px;
+}
+
+#wrapper {
+	width:95%;
+	height:auto;
+	margin:0 auto;
+border:0px none;
+	/*border:4px solid black;*/
+}
+
+#tableProperties {
+	position:relative;
+	width:35%;
+	height:200px;
+	border:1px solid black;
+	float:right;
+	right:0px;
+	padding:4px;
+}
+
+
+.properties_key_val{
+	width:100px;
+	float:left;
+	font-weight: bolder;
+}

@@ -1,0 +1,12 @@
+14.03.2015 02.17.11..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 02.17.41..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+14.03.2015 02.17.51..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'

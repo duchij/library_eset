@@ -1,0 +1,2 @@
+<strong>{$smarty.session.abstrakter.footer.app_title}</strong>, {$smarty.session.abstrakter.footer.footer_text}<br>
+Scripting and Design by <a href="https://github.com/duchij/abstrakter" target="_blank">Boris Duchaj</a>, (c) 2014

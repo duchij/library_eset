@@ -1,0 +1,106 @@
+12.03.2015 10.17.44..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 10.18.00..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 10.18.54..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 10.21.04..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 10.22.03..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 10.49.05..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 11.11.31..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 11.13.05..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 11.14.15..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.14.15..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','4124bc0a9335c27f086f24ba207a4912') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 11.15.48..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.19.39..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.22.12..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.26.10..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+12.03.2015 11.26.29..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.27.17..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.28.08..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.30.23..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 11.30.23..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 12.01.08..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 12.03.16..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 12.03.16..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 12.06.49..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 12.06.49..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 12.08.04..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 12.08.04..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 12.10.13..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+12.03.2015 12.10.13..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+12.03.2015 12.10.13..........>LOG==========================================================================
+INSERT INTO `usersdata` (`user_id`,`contact_email`) VALUES ('33','bduchaj@gmail.com') ON DUPLICATE KEY UPDATE  `user_id` = VALUES(`user_id`),  `contact_email` = VALUES(`contact_email`)

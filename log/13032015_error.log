@@ -1,0 +1,4 @@
+13.03.2015 18.15.05..........>0==========================================================================
+Chyba SQL: SELECT * FROM `books` WHERE `name` LIKE 'Array%' OR LIKE 'Array%' Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIKE 'Array%'' at line 1
+13.03.2015 18.16.07..........>0==========================================================================
+Chyba SQL: SELECT * FROM `books` WHERE `name` LIKE 'ide%' OR LIKE 'dom%' Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIKE 'dom%'' at line 1

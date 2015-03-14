@@ -1,0 +1,262 @@
+13.03.2015 06.27.10..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+13.03.2015 06.29.29..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+13.03.2015 06.29.29..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+13.03.2015 06.29.29..........>LOG==========================================================================
+INSERT INTO `usersdata` (`user_id`,`contact_email`) VALUES ('34','bduchaj@gmail.com') ON DUPLICATE KEY UPDATE  `user_id` = VALUES(`user_id`),  `contact_email` = VALUES(`contact_email`)
+13.03.2015 06.32.49..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+13.03.2015 06.32.49..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+13.03.2015 06.32.49..........>LOG==========================================================================
+INSERT INTO `usersdata` (`user_id`,`contact_email`) VALUES ('35','bduchaj@gmail.com') ON DUPLICATE KEY UPDATE  `user_id` = VALUES(`user_id`),  `contact_email` = VALUES(`contact_email`)
+13.03.2015 06.35.34..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+13.03.2015 06.35.34..........>LOG==========================================================================
+INSERT INTO `users` (`email`,`password`) VALUES ('bduchaj@gmail.com','61147ce0a442956b063d0d3beb1624b6') ON DUPLICATE KEY UPDATE  `email` = VALUES(`email`),  `password` = VALUES(`password`)
+13.03.2015 06.35.34..........>LOG==========================================================================
+INSERT INTO `usersdata` (`user_id`,`contact_email`) VALUES ('36','bduchaj@gmail.com') ON DUPLICATE KEY UPDATE  `user_id` = VALUES(`user_id`),  `contact_email` = VALUES(`contact_email`)
+13.03.2015 06.37.20..........>LOG==========================================================================
+SELECT * FROM `users` WHERE `email` = 'bduchaj@gmail.com'
+13.03.2015 06.37.30..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '4124bc0a9335c27f086f24ba207a4912'
+				
+13.03.2015 06.40.26..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 08.56.48..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 09.15.07..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 09.26.23..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 09.28.57..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 09.37.45..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`) VALUES ('jrklkj','lkjljlkj','lkjlk','j') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`),  `subname` = VALUES(`subname`),  `bookprint` = VALUES(`bookprint`),  `isbn` = VALUES(`isbn`)
+13.03.2015 09.48.36..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`) VALUES ('vvcxv','cxvcx','xcv','vxcv') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`)
+13.03.2015 16.08.12..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('ideme domov','po ceste','niekto','x55555','duchaj','10') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.09.33..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('toto je pokus','duchaj','alfa','9798978','duch','10') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.10.47..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('asdas','asdasd','asdas','34234234','asdasd','20') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.11.27..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('safdsf','dsffadf','sdfadf','sdfasdf','sdfasdf','30') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.14.17..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('were','werwe','dfsf','sdfs','werwr','40') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.19.27..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('dfsdfsd','sdfdfad','sdfdsff','34234342','sdfasdf','50') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.19.27..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('8','pokus1','36'),('8','pokus2','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 16.40.53..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('assd','asdas','asdd','asdad','asdds','30') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.40.53..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('9','pokus1','36'),('9','pokus2','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 16.42.10..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('dsfsdf','sdfdsf','dsfsdf','fdsfsdf','sdfsdf','10') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.42.10..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('10','pokus1','36'),('10','pokus2','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 16.42.50..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('adasd','asdad','asd','asdd','asdasd','10') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.42.50..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('11','pokus1','36'),('11','pokus2','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 16.47.42..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('nieco','lalala','dfkdfj','09850985098','toto e eiruoieu','40') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 16.47.42..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('12','ha1','36'),('12','ha2','36'),('12','ha3','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 18.01.26..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('Ideme na to domov','skusam','niekto','2212','duchaj','30') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+13.03.2015 18.01.26..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('13','domov','36'),('13','skuska','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
+13.03.2015 18.01.55..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.09.47..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.10.10..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.10.45..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.11.12..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.12.00..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.12.39..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.13.08..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.13.44..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.14.12..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.14.27..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'Array%'
+13.03.2015 18.14.57..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 18.15.58..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 18.17.26..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%' OR 'dom%'
+13.03.2015 18.18.45..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%' OR 'dom%'
+13.03.2015 18.21.38..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.22.41..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.22.55..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.24.28..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.25.19..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.26.43..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.27.30..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.29.13..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.34.00..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.35.14..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'dom%'
+13.03.2015 18.35.20..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.36.25..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%dom%'
+13.03.2015 18.38.46..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+13.03.2015 18.40.33..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+13.03.2015 18.43.13..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE '%idem%' OR '%dom%'
+13.03.2015 18.43.20..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'sd%'
+13.03.2015 18.43.23..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'asa%'
+13.03.2015 18.43.30..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'as%'
+13.03.2015 18.45.02..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+13.03.2015 20.56.47..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.05.19..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.07.19..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.15.04..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.21.13..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.22.05..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.23.29..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.25.42..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				
+13.03.2015 21.26.08..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+13.03.2015 21.30.01..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
