@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-13 21:29:47
+<?php /* Smarty version 2.6.28, created on 2015-03-14 07:59:24
          compiled from book.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,8 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 		</div>
-			<div id="content-main" style="width:750px;">
+		<div id="content-main" style="width:750px;">
+
 			<h1> Pridaj/Uprav knihu</h1>
 			<h3><?php echo $this->_tpl_vars['book']['message']; ?>
 </h3>
@@ -89,12 +90,13 @@ unset($_smarty_tpl_vars);
 				<button name="<?php echo $this->_tpl_vars['book']['action']; ?>
 " value="<?php echo $this->_tpl_vars['book']['id']; ?>
 ">Ulozit	</button>
-				<!-- div id="block" style="border:none;padding:0px;margin:0px">-->
+				
 		</form>
 	</div>
 	<div id="content-right">
 		
-		</div> 
+	</div> 
+
 	</div>
 	<div id="footer"><?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));

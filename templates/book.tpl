@@ -26,7 +26,8 @@
 		<div id="content-left">
 			{include file="main_menu.tpl"}
 		</div>
-			<div id="content-main" style="width:750px;">
+		<div id="content-main" style="width:750px;">
+
 			<h1> Pridaj/Uprav knihu</h1>
 			<h3>{$book.message}</h3>
 <!-- 			<input type="hidden" value="{$book.id}"> -->
@@ -68,12 +69,13 @@
 
 			</table>
 				<button name="{$book.action}" value="{$book.id}">Ulozit	</button>
-				<!-- div id="block" style="border:none;padding:0px;margin:0px">-->
+				
 		</form>
 	</div>
 	<div id="content-right">
 		
-		</div> 
+	</div> 
+
 	</div>
 	<div id="footer">{include file="footer.tpl"}</div>
 	<div id="bottom"></div>

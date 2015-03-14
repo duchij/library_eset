@@ -42,8 +42,44 @@ class libs extends app {
     private function editBookData($id)
     {
         $query = sprintf("SELECT * FROM [books] WHERE [id]=%d",intval($id));
-        $table = $this->db->sql_row($query);
+        $row = $this->db->sql_row($query);
+       
+        if (!isset($row["error"]))
+        {
+            $row["tags"] = $this->readBookTags($row["id"]);
+            $row["action"] = "addBook_fnc";
+            $this->smarty->assign("book",$row);
+            $this->smarty->display("book.tpl");
+        }
         
+        
+    }
+    
+    private function readBookTags($book_id)
+    {
+        $result = "";
+        
+        $query = sprintf("SELECT * FROM [tags] WHERE [book_id]=%d",intval($book_id));
+        $table = $this->db->sql_table($query);
+        
+        if ($table["status"])
+        {
+            $data = $table["table"];
+            $tagsArr = array();
+            $dataCn = count($data);
+            for ($i=0; $i<$dataCn; $i++)
+            {
+                $tagsArr[$i] = $data[$i]["tag"];  
+            }
+            
+            $result = implode(",",$tagsArr);
+        }
+        else
+        {
+            $result="";
+        }
+        
+        return $result;
     }
     
     private function show_book()
@@ -67,23 +103,16 @@ class libs extends app {
     
     public function addBook_fnc($id,$request)
     {
-        if (!empty($id))
-        {
-            $this->updateBookInfo($request);
-        }
-        else 
-        {
-            $this->saveNewBook($request);
-        }
+       
+      $this->saveBook($request);
     }
+        
     
     public function search_fnc($data,$request)
     {
         $this->searchBooks($request);
     }
-    
-    
-    
+      
     
     
     private function searchBooks($request)
@@ -164,12 +193,10 @@ class libs extends app {
             $data = array("message"=>"Chyba".$table["error"]);
             $this->showError("search.tpl",$data,"message");
         }
-        
-        
     }
     
     
-    private function saveNewBook($request)
+    private function saveBook($request)
     {
        //print_r($request); 
        $data = array();

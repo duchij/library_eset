@@ -10,3 +10,49 @@ SELECT * FROM `books` WHERE `name` LIKE 'ide%'
 				
 14.03.2015 02.17.51..........>LOG==========================================================================
 SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.36.08..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				 LIMIT 1
+14.03.2015 07.36.16..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.36.19..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `id`=13 LIMIT 1
+14.03.2015 07.36.40..........>LOG==========================================================================
+
+				SELECT *
+					FROM `users`
+				LEFT JOIN `usersdata` ON `usersdata`.`user_id` = `users`.`id`
+					WHERE `users`.`email` = 'bduchaj@gmail.com'
+					AND `users`.`password` = '61147ce0a442956b063d0d3beb1624b6'
+				 LIMIT 1
+14.03.2015 07.36.48..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.36.51..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `id`=13 LIMIT 1
+14.03.2015 07.42.43..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.42.46..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `id`=13 LIMIT 1
+14.03.2015 07.42.46..........>LOG==========================================================================
+SELECT * FROM `tags` WHERE `book_id`=13
+14.03.2015 07.43.41..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.43.44..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `id`=13 LIMIT 1
+14.03.2015 07.43.44..........>LOG==========================================================================
+SELECT * FROM `tags` WHERE `book_id`=13
+14.03.2015 07.47.37..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `name` LIKE 'ide%'
+14.03.2015 07.47.40..........>LOG==========================================================================
+SELECT * FROM `books` WHERE `id`=13 LIMIT 1
+14.03.2015 07.47.40..........>LOG==========================================================================
+SELECT * FROM `tags` WHERE `book_id`=13
+14.03.2015 07.47.45..........>LOG==========================================================================
+INSERT INTO `books` (`name`,`subname`,`bookprint`,`isbn`,`autors`,`amount`) VALUES ('Ideme na to domov','skusam2','niekto','2212','duchaj','30') ON DUPLICATE KEY UPDATE  `name` = VALUES(`name`), `subname` = VALUES(`subname`), `bookprint` = VALUES(`bookprint`), `isbn` = VALUES(`isbn`), `autors` = VALUES(`autors`), `amount` = VALUES(`amount`)
+14.03.2015 07.47.45..........>LOG==========================================================================
+INSERT INTO `tags` (`book_id`,`tag`,`user_id`) VALUES ('13','domov','36'),('13','skuska','36') ON DUPLICATE KEY UPDATE  `book_id` = VALUES(`book_id`), `tag` = VALUES(`tag`), `user_id` = VALUES(`user_id`)
