@@ -1,5 +1,6 @@
 <?php 
-require_once 'libs.php';
+session_start();
+require_once 'app.class.php';
 
 class init {
     
@@ -10,18 +11,24 @@ class init {
     
     function run($data)
     {
-        $libs = new libs();
+        
        //print_r($data);
        
         
-        if (isset($data["class"]) && $data["class"]=="libs")
+        if (isset($data["class"]))
         {
+            $cls = $data["class"];
+            require_once $cls.'.class.php';
+            $obj = new $cls();
+            $obj->startPage($data);
             
-            $libs->startPage($data);
         }
-        else 
+        else  //fallback class
         {
-            $libs->startPage($data);
+            $cls = "libs";
+            require_once $cls.'.class.php';
+            $obj = new $cls();
+            $obj->startPage($data);
         }
     }
 }

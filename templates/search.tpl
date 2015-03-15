@@ -23,13 +23,15 @@
 		</div>
 
 <div id="content">
+
 		<div id="content-left">
 			{include file="main_menu.tpl"}
 		</div>
-	<div id="content-main" style="width:750px;">
+		
+	<div id="content-main" style="width:550px;">
 			<h3>{$book.message}</h3>
 <!-- 			<input type="hidden" value="{$book.id}"> -->
-			<div id="formular">
+			
 			<form name="form1" method='post' action="app.php">
 			<input type="hidden" name="class" value="libs">
 			<table>
@@ -60,27 +62,21 @@
 				<tr>
 					<td>{$row.name}</td>
 					<td>{$row.amount}</td>
-					<td><button name="borrow_fnc" value="{$row.id}">Pozicat</button></td>
-					<td><button name="edit_fnc" value="{$row.id}">Editovat</button></td>
-					<td><button name="delete_fnc" value="{$row.id}">Zmazat</button></td>
+					<td>
+						{if $row.amount > 0}
+							<button name="borrow_fnc" value="{$row.id}">Požičať</button>
+						{/if}
+					</td>
+					<td><button name="edit_fnc" value="{$row.id}">Editovať</button></td>
+					<td><button name="delete_fnc" value="{$row.id}">Zmazať</button></td>
 				</tr>
             {/foreach}
 			</table>
-			
-				<!-- div id="block" style="border:none;padding:0px;margin:0px">-->
-				
-				
-				
-				
-			</div>
-			
-			
 		</form>
 		</div>
 	
-	</div>
 	<div id="content-right">
-			 
+			nieco 
 		
 		</div> 
 	</div>

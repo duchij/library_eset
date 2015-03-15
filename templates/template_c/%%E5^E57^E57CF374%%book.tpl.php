@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-14 07:59:24
+<?php /* Smarty version 2.6.28, created on 2015-03-15 14:04:44
          compiled from book.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 		</div>
-		<div id="content-main" style="width:750px;">
+		<div id="content-main" style="width:550px;">
 
 			<h1> Pridaj/Uprav knihu</h1>
 			<h3><?php echo $this->_tpl_vars['book']['message']; ?>
@@ -46,7 +46,7 @@ unset($_smarty_tpl_vars);
 			
 			<form name="form1" method='post' action="app.php">
 			<input type="hidden" name="class" value="libs">
-			<table>
+			<table width="100%">
 				<tr>
 					<td>Názov knihy:</td>
 					<td><input type="text" name="name_txt" value="<?php echo $this->_tpl_vars['book']['name']; ?>
@@ -93,9 +93,9 @@ unset($_smarty_tpl_vars);
 				
 		</form>
 	</div>
-	<div id="content-right">
-		
-	</div> 
+		<div id="content-right">
+			<h1>Moje značky</h1><hr>
+		</div> 
 
 	</div>
 	<div id="footer"><?php $_smarty_tpl_vars = $this->_tpl_vars;

@@ -1,3 +1,4 @@
+<h2>Menu</h2><hr>
 <ul>
 		{if $admin}
 <!-- 			<li><a href="app.php?addcon=1">Kongresy</a></li> -->
@@ -7,8 +8,8 @@
 			<form method="post" action="app.php">
 				<input type="hidden" name="class" value="libs">
 				<li><button name="run" value="1">Pridaj knihu</button></li>
-				<li><button name="run" value="2">Hladat knihu</button></li>
-				<li><button name="run" value="3">Pozicat knihu</button></li>
-				<li><button name="logout" value="1">Odhlasit sa</button></li>
+				<li><button name="run" value="2">Hľadať knihu</button></li>
+				<li><button name="run" value="3">Požičat knihu</button></li>
+				<li><button name="logout" value="1">Odhlásit sa</button></li>
 			</form>
 </ul>

@@ -26,7 +26,7 @@
 		<div id="content-left">
 			{include file="main_menu.tpl"}
 		</div>
-		<div id="content-main" style="width:750px;">
+		<div id="content-main" style="width:550px;">
 
 			<h1> Pridaj/Uprav knihu</h1>
 			<h3>{$book.message}</h3>
@@ -34,7 +34,7 @@
 			
 			<form name="form1" method='post' action="app.php">
 			<input type="hidden" name="class" value="libs">
-			<table>
+			<table width="100%">
 				<tr>
 					<td>Názov knihy:</td>
 					<td><input type="text" name="name_txt" value="{$book.name}" style="width:300px;"></td>
@@ -72,9 +72,9 @@
 				
 		</form>
 	</div>
-	<div id="content-right">
-		
-	</div> 
+		<div id="content-right">
+			<h1>Moje značky</h1><hr>
+		</div> 
 
 	</div>
 	<div id="footer">{include file="footer.tpl"}</div>

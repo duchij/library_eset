@@ -1,0 +1,33 @@
+CREATE TABLE `borrows` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `book_id` bigint(20) unsigned NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `start` date NOT NULL,
+  `end` date DEFAULT NULL,
+  `days` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `book_id_user_id` (`book_id`,`user_id`),
+  KEY `user_id` (`user_id`),
+  KEY `start` (`start`),
+  KEY `end` (`end`),
+  CONSTRAINT `borrows_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `borrows_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_slovak_ci;
+
+CREATE DEFINER=`root`@`localhost` TRIGGER `borrows_before_insert` BEFORE INSERT ON `borrows` 
+FOR EACH ROW 
+BEGIN
+	SET @sDate = NEW.start;
+	SET @iDays = NEW.days;
+	SET @bookID = NEW.book_id;
+	SET @eDate = DATE_ADD(@sDate, INTERVAL @iDays DAY);
+	
+	SET NEW.end = @eDate;
+	
+	SET @amount = (SELECT amount FROM books WHERE id = @bookID);
+	
+	SET @amount = @amount -1;
+	
+	UPDATE books set amount = @amount WHERE id = @bookId;
+
+END

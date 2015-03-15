@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-14 02:16:56
+<?php /* Smarty version 2.6.28, created on 2015-03-15 19:35:33
          compiled from search.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +29,7 @@ unset($_smarty_tpl_vars);
 		</div>
 
 <div id="content">
+
 		<div id="content-left">
 			<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "main_menu.tpl", 'smarty_include_vars' => array()));
@@ -36,12 +37,13 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 		</div>
-	<div id="content-main" style="width:750px;">
+		
+	<div id="content-main" style="width:550px;">
 			<h3><?php echo $this->_tpl_vars['book']['message']; ?>
 </h3>
 <!-- 			<input type="hidden" value="<?php echo $this->_tpl_vars['book']['id']; ?>
 "> -->
-			<div id="formular">
+			
 			<form name="form1" method='post' action="app.php">
 			<input type="hidden" name="class" value="libs">
 			<table>
@@ -78,30 +80,24 @@ unset($_smarty_tpl_vars);
 </td>
 					<td><?php echo $this->_tpl_vars['row']['amount']; ?>
 </td>
-					<td><button name="borrow_fnc" value="<?php echo $this->_tpl_vars['row']['id']; ?>
-">Pozicat</button></td>
+					<td>
+						<?php if ($this->_tpl_vars['row']['amount'] > 0): ?>
+							<button name="borrow_fnc" value="<?php echo $this->_tpl_vars['row']['id']; ?>
+">Požičať</button>
+						<?php endif; ?>
+					</td>
 					<td><button name="edit_fnc" value="<?php echo $this->_tpl_vars['row']['id']; ?>
-">Editovat</button></td>
+">Editovať</button></td>
 					<td><button name="delete_fnc" value="<?php echo $this->_tpl_vars['row']['id']; ?>
-">Zmazat</button></td>
+">Zmazať</button></td>
 				</tr>
             <?php endforeach; endif; unset($_from); ?>
 			</table>
-			
-				<!-- div id="block" style="border:none;padding:0px;margin:0px">-->
-				
-				
-				
-				
-			</div>
-			
-			
 		</form>
 		</div>
 	
-	</div>
 	<div id="content-right">
-			 
+			nieco 
 		
 		</div> 
 	</div>

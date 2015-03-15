@@ -16,7 +16,7 @@
 		<div id="content-main" style="width:250px;">
 				
 			<form method='post' action="index.php">
-			<input type="hidden" name="class" value="libs">
+			
 			<table>
 				<tr><td>Email:</td><td> <input type="text" name="email"></td></tr>
 				<tr><td>Heslo:</td><td> <input type="password" name="password"></td></tr>

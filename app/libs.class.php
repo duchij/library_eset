@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once 'app.class.php';
+
 
 class libs extends app {
     
@@ -34,6 +33,8 @@ class libs extends app {
         
     }
     
+    
+    
     public function edit_fnc($id,$data)
     {
         $this->editBookData($id);
@@ -50,6 +51,44 @@ class libs extends app {
             $row["action"] = "addBook_fnc";
             $this->smarty->assign("book",$row);
             $this->smarty->display("book.tpl");
+        }
+        
+        
+    }
+    
+    public function borrow_fnc($id,$data)
+    {
+        $this->borrowBook($id);
+    }
+    
+    /*
+     * 
+     * 
+     */
+    private function checkBorrowedBook($userId,$bookId)
+    {
+        $result = false;
+        $query = sprintf("SELECT COUNT([book_id]) AS [borrowed_book] FROM [borrows] WHERE [user_id]=%d AND [book_id]=%d",$userId,$bookId);
+        $row = $this->db->sql_row($query);
+        
+    }
+    
+    private function borrowBook($id)
+    {
+       // print_r($id);
+        $data = array();
+        $data["user_id"] = $_SESSION["libs"]["user_id"];
+        $data["book_id"] = intval($id);
+        $data["start"] = date("Y-m-d");
+        $data["days"] = 21;
+        
+        $res = $this->db->insert_row("borrows",$data);
+        
+        if ($res["status"])
+        {
+           $this->smarty->assign("message","Kniha bola zapožičaná");
+           $this->smarty->display("search.tpl");
+           
         }
         
         
@@ -120,61 +159,70 @@ class libs extends app {
         $searchIn = $request["searchin"];
         $phrase = trim($request["phrase"]);
         $searchInMiddle = false;
-        
-        if (isset($request["inword"]) && $request["inword"] == "yes")
+        if ($searchIn != "isbn")
         {
-            $searchInMiddle = true;
-        }
-
-        $phraseArr = explode(" ",$phrase);
-        
-        
-        $passCn = count($phraseArr);
-        $query = "";
-        $where = "";
-        print_r($passCn);
-        if ($passCn == 0)
-        {
-            if (!$searchInMiddle)
+            if (isset($request["inword"]) && $request["inword"] == "yes")
             {
-                $query = sprintf("LIKE '%s'",$phrase."%");
+                $searchInMiddle = true;
             }
-            else
-            {
-                $query = sprintf("LIKE '%s'","%".$phrase."%");
-            }    
-        }
-        else
-        {
-            $queryArr = array();
-            for ($i=0; $i<$passCn;$i++)
+    
+            $phraseArr = explode(" ",$phrase);
+            
+            
+            $passCn = count($phraseArr);
+            $query = "";
+            $where = "";
+            //print_r($passCn);
+            if ($passCn == 0)
             {
                 if (!$searchInMiddle)
                 {
-                    $_query = sprintf("'%s'",$phraseArr[$i]."%");
+                    $query = sprintf("LIKE '%s'",$phrase."%");
                 }
                 else
                 {
-                    $_query = sprintf("'%s'","%".$phraseArr[$i]."%");
-                }
-                
-                $queryArr[$i] = $_query;
+                    $query = sprintf("LIKE '%s'","%".$phrase."%");
+                }    
             }
-            $query = implode(" OR ",$queryArr);
+            else
+            {
+                $queryArr = array();
+                for ($i=0; $i<$passCn;$i++)
+                {
+                    if (!$searchInMiddle)
+                    {
+                        $_query = sprintf("'%s'",$phraseArr[$i]."%");
+                    }
+                    else
+                    {
+                        $_query = sprintf("'%s'","%".$phraseArr[$i]."%");
+                    }
+                    
+                    $queryArr[$i] = $_query;
+                }
+                $query = implode(" OR ",$queryArr);
+                
+            }
             
+             
+            switch ($searchIn) {
+               case "name":
+                   $where = '[name]';
+                   break;
+               case "autor":
+                   $where = "[autors]";
+                   break;
+               
+            }  
         }
-        
-         
-        switch ($searchIn) {
-           case "name":
-               $where = '[name]';
-               break;
-           case "autor":
-               $where = "[autors]";
-               break;
-        }  
-        
-        $finalQuery = sprintf("SELECT * FROM [books] WHERE %s LIKE %s",$where,$query);
+        if ($searchIn !="isbn")
+        {
+            $finalQuery = sprintf("SELECT * FROM [books] WHERE %s LIKE %s",$where,$query);
+        }
+        else 
+        {
+            $finalQuery = sprintf("SELECT * FROM [books] WHERE [isbn]= '%s'", $phrase);
+        }
         
         
         $table = $this->db->sql_table($finalQuery);

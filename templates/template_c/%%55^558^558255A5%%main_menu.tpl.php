@@ -1,5 +1,6 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-13 21:21:14
+<?php /* Smarty version 2.6.28, created on 2015-03-15 14:05:59
          compiled from main_menu.tpl */ ?>
+<h2>Menu</h2><hr>
 <ul>
 		<?php if ($this->_tpl_vars['admin']): ?>
 <!-- 			<li><a href="app.php?addcon=1">Kongresy</a></li> -->
@@ -9,8 +10,8 @@
 			<form method="post" action="app.php">
 				<input type="hidden" name="class" value="libs">
 				<li><button name="run" value="1">Pridaj knihu</button></li>
-				<li><button name="run" value="2">Hladat knihu</button></li>
-				<li><button name="run" value="3">Pozicat knihu</button></li>
-				<li><button name="logout" value="1">Odhlasit sa</button></li>
+				<li><button name="run" value="2">Hľadať knihu</button></li>
+				<li><button name="run" value="3">Požičat knihu</button></li>
+				<li><button name="logout" value="1">Odhlásit sa</button></li>
 			</form>
 </ul>

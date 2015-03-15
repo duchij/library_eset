@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-13 21:05:13
+<?php /* Smarty version 2.6.28, created on 2015-03-15 13:58:55
          compiled from login.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@ unset($_smarty_tpl_vars);
 		<div id="content-main" style="width:250px;">
 				
 			<form method='post' action="index.php">
-			<input type="hidden" name="class" value="libs">
+			
 			<table>
 				<tr><td>Email:</td><td> <input type="text" name="email"></td></tr>
 				<tr><td>Heslo:</td><td> <input type="password" name="password"></td></tr>
