@@ -9,12 +9,16 @@ class init {
         
     }
     
-    function run($data)
+    /**
+     * 
+     * Funkcia zavola triedu a instancuje dla formularu ktory ju zavolal a odovzda jej webovsky request
+     * 
+     * @param array $data REQUEST data
+     * 
+     * @todo toto treba obohatit a furu veci :)
+     */
+    public function run($data)
     {
-        
-       //print_r($data);
-       
-        
         if (isset($data["class"]))
         {
             $cls = $data["class"];

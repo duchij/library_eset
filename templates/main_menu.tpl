@@ -9,7 +9,7 @@
 				<input type="hidden" name="class" value="libs">
 				<li><button name="run" value="1">Pridaj knihu</button></li>
 				<li><button name="run" value="2">Hľadať knihu</button></li>
-				<li><button name="run" value="3">Požičat knihu</button></li>
+				<li><button name="run" value="3">Požičane knihy</button></li>
 				<li><button name="logout" value="1">Odhlásit sa</button></li>
 			</form>
 </ul>

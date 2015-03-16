@@ -15,6 +15,16 @@ class db {
 		$this->mysqli = $mysqli;
 	}
 	
+	
+	
+	/**
+	 * Vrati upraveny sql string uz na pracu s db
+	 * 
+	 * @param string $sql formatovany string
+	 * @return string formatovany retazec
+	 * 
+	 * @todo pridat lepsie parsovanie
+	 */
 	private function modifStr($sql)
 	{
 		$what = array("[","]");
@@ -57,6 +67,12 @@ class db {
 	}
 	
 	
+	/**
+	 * Vykona formatovany sql prikaz nie charakteru query UPDATE, DELETE a pod
+	 * 
+	 * @param string $sql formatovany string
+	 * @return boolean vrati ci sa vykonal spravne
+	 */
 	public function sql_execute($sql)
 	{
 		$res = true;
@@ -78,13 +94,21 @@ class db {
 		
 	}
 	
+	/**
+	 * Vrati tabulku vlozeneho selectu for forme pola
+	 * 
+	 * @param string $sql formatovany string
+	 * 
+	 * @return multitype:boolean multitype: string 
+	 */
 	public function sql_table($sql)
 	{
 		$result = array("status"=>TRUE,"table"=>array(),"error"=>'');
 		
 		$sql = $this->modifStr($sql);
+		$tmp = $this->mysqli->query($sql);
 		
-		if ($tmp = $this->mysqli->query($sql))
+		if ($tmp)
 		{
 			$this->logData($sql);
 			$num_rows =$tmp->num_rows;
@@ -119,7 +143,8 @@ class db {
 	{
 		$result = array();
 		$sql = $this->modifStr($sql);
-		if ($tmp = $this->mysqli->query($sql))
+		$tmp = $this->mysqli->query($sql);
+		if ($tmp)
 		{
 			$this->logData($sql);
 			$result['rows'] = $tmp->num_rows;
@@ -136,6 +161,13 @@ class db {
 		return $result;
 	}
 	
+	/**
+	 * Vrati jeden riadok z DB
+	 * 
+	 * @param string $sql formatovane query
+	 * 
+	 * @return array vrati riadok ako jednoduche pole
+	 */
 	public function sql_row($sql)
 	{
 	    
@@ -174,7 +206,8 @@ class db {
 		return $result;
 	
 	}
-	/** vlozi novy riadok bez kontroly ci existuje **/
+	
+	
 	public function sql_new_row($table,$data)
 	{
 		$this->openDb();
@@ -215,7 +248,15 @@ class db {
 	
 	}
 	
-	function insert_rows($table,$data)
+	/**
+	 * Vlozi pole riadkov do tabulky v transakci s on key update value
+	 * 
+	 * @param string $table nazov tabulky
+	 * @param array $data zlozene pole 
+	 * 
+	 * @return multitype:boolean NULL 
+	 */
+	public function insert_rows($table,$data)
 	{
 	    $result = array();
 	    
@@ -290,6 +331,14 @@ class db {
 	    return $result;
 	}
 	
+	/**
+	 * Vlozi jeden riadok do vybranej tabulky v transakci s on key update value
+	 *
+	 * @param string $table nazov tabulky kam vlozit
+	 * @param array $data jednoduche pole,
+	 *
+	 * @return boolean
+	 */
 	function insert_row($table,$data)
 	{
 		

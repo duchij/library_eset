@@ -9,6 +9,12 @@ require_once 'mysql.class.php';
 //require_once 'labels/labels.class.php';
 
 
+/**
+ * @author Boris Duchaj
+ * 
+ * @version 0.0.1
+ *
+ */
 class app {
 	
 	var $includeDir = "./include";
@@ -104,10 +110,19 @@ class app {
 			fclose($fp);
 		}
 	}
-		
+
 	
 	
+	
 		
+	/**
+	 * Zakladna funkcia ktora predava REQUEST z formulara a dla toho vola metodu v triede
+	 * 
+	 * @param array $request  Pole $_REUQEST
+	 * @param unknown $caller Objekt ktory zavolal fnc aby sa mu vratila 
+	 * 
+	 * @return boolean ak bola funkcia vo forme najdena..... inak false a treba to osetrit uz v triede
+	 */
 	public function run_app($request,$caller)
 	{
 		//var_dump($request);

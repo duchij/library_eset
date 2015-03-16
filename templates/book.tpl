@@ -2,17 +2,10 @@
 <html>
 
 <head>
-
-<link rel="stylesheet" type="text/css" href="css/layout.css" >
-
-<!-- <link rel="stylesheet" type="text/css" href="js/src/fancyfields.css" > -->
-
+ 
 <meta charset="UTF-8">
-<title>Abstrakter - Pridaj kongress</title>	
-<script src="js/abstracter.js"></script>
-
-<!-- <script src="js/jquery.js"></script>
-<script src="js/src/fancyfields-1.2.min.js"></script> -->
+<title>Kniznica - pridaj/edituj knihu</title>	
+<style type="text/stylesheet"  src="css/layout.css"></style>
 
 </head>
 <body>

@@ -1,18 +1,13 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-15 14:04:44
+<?php /* Smarty version 2.6.28, created on 2015-03-16 14:37:27
          compiled from book.tpl */ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-
-<link rel="stylesheet" type="text/css" href="css/layout.css" >
-
-<!-- <link rel="stylesheet" type="text/css" href="js/src/fancyfields.css" > -->
-
+ 
+<link rel="stylesheet" type="text/css" ref="css/layout.css" >
 <meta charset="UTF-8">
-<title>Abstrakter - Pridaj kongress</title>	
-<script src="js/abstracter.js"></script>
-
+<title>Kniznica - pridaj/edituj knihu</title>	
 <!-- <script src="js/jquery.js"></script>
 <script src="js/src/fancyfields-1.2.min.js"></script> -->
 

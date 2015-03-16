@@ -1,6 +1,10 @@
 <?php
-
-
+/**
+ * @author Boris Duchaj
+ * 
+ *  
+ *
+ */
 class libs extends app {
     
     function __construct()
@@ -9,6 +13,13 @@ class libs extends app {
         
     }
     
+    /**
+     * Bud zavola fnc udanu vo formulari alebo vykona urcitu cinnost
+     * 
+     * @param array $data REQUEST pole
+     * 
+     * 
+     */
     public function startPage($data)
     {
        // $this->smarty->display("libs.tpl");
@@ -25,12 +36,23 @@ class libs extends app {
             {
                 $this->show_search();
             }
+            else if (isset($data["run"]) && intval($data["run"]) == 3)
+            {
+                $this->showBorrowedBooks($data);
+            }
             else 
             {
                 $this->smarty->display($_SESSION["libs"]["last_page"]);
             }
         }
         
+    }
+    
+    private function showBorrowedBooks($data)
+    {
+        $query = "SELECT * FROM [borrows] 
+                        INNER JOIN [users] ON [users.id] = [borrows].[user_id]
+            ";
     }
     
     
@@ -40,6 +62,11 @@ class libs extends app {
         $this->editBookData($id);
     }
     
+    /**
+     * Nacita data knihy a umozni jej editaciu
+     * 
+     * @param int $id idecko knihy
+     */
     private function editBookData($id)
     {
         $query = sprintf("SELECT * FROM [books] WHERE [id]=%d",intval($id));
@@ -61,39 +88,71 @@ class libs extends app {
         $this->borrowBook($id);
     }
     
-    /*
+  
+    /**
+     * Zistuje ci je uz dana kniha pozicana userom.
      * 
+     * @param int $userId idecko uzivatela
+     * @param int $bookId idecko Knihy
      * 
-     */
+     * @return boolean true kniha je pozicana false-kniha nie je pozicana userom
+     */     
     private function checkBorrowedBook($userId,$bookId)
     {
         $result = false;
         $query = sprintf("SELECT COUNT([book_id]) AS [borrowed_book] FROM [borrows] WHERE [user_id]=%d AND [book_id]=%d",$userId,$bookId);
-        $row = $this->db->sql_row($query);
+
+        $row = $this->db->sql_row($query); 
         
-    }
-    
-    private function borrowBook($id)
-    {
-       // print_r($id);
-        $data = array();
-        $data["user_id"] = $_SESSION["libs"]["user_id"];
-        $data["book_id"] = intval($id);
-        $data["start"] = date("Y-m-d");
-        $data["days"] = 21;
-        
-        $res = $this->db->insert_row("borrows",$data);
-        
-        if ($res["status"])
+        if ($row["borrowed_book"] > 0)
         {
-           $this->smarty->assign("message","Kniha bola zapožičaná");
-           $this->smarty->display("search.tpl");
-           
+            $result = true;
         }
         
-        
+        return $result;
     }
     
+    /**
+     * Pozicanie knihy
+     * 
+     * @param int $id idecko knihy
+     */
+    private function borrowBook($id) 
+    {
+       // print_r($id);
+        $bookBorrowed = $this->checkBorrowedBook($this->user_id, intval($id));
+       
+        if (!$bookBorrowed)
+        {
+            $data = array();
+            
+            $data["user_id"] = $this->user_id;
+            $data["book_id"] = intval($id);
+            $data["start"] = date("Y-m-d");
+            $data["days"] = 21;
+            
+            $res = $this->db->insert_row("borrows",$data);
+            
+            if ($res["status"])
+            {
+               $this->smarty->assign("message","Kniha bola zapožičaná");
+               $this->smarty->display("search.tpl");
+            }
+        }
+        else 
+        {
+            $this->smarty->assign("message","Knihu už máte požičanú....");
+            $this->smarty->display("search.tpl");
+        }
+    }
+    
+    
+    /**
+     * Nacita tagy pre danu knihu...
+     * 
+     * @param int $book_id idecko knihy
+     * @return string $result string oddeleny ciarkami
+     */
     private function readBookTags($book_id)
     {
         $result = "";
@@ -179,7 +238,7 @@ class libs extends app {
                 {
                     $query = sprintf("LIKE '%s'",$phrase."%");
                 }
-                else
+                else    
                 {
                     $query = sprintf("LIKE '%s'","%".$phrase."%");
                 }    
