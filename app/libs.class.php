@@ -50,19 +50,25 @@ class libs extends app {
     
     private function showBorrowedBooks($data)
     {
-        $qTmp = "SELECT * FROM [borrows] 
-                        INNER JOIN [users] ON [user_id] = [borrows].[user_id]
-                        INNER JOIN [books] ON [book_id] = [borrows].[book_id]
+        $_SESSION["libs"]["last_page"] = "borrow.tpl";
+        
+        $qTmp = "SELECT [borrows].*,CONCAT([usersdata].[meno],' ',[usersdata].[priezvisko]) AS [cele_meno], 
+                        [books].[name] AS [nazov] FROM [borrows] 
+                        INNER JOIN [usersdata] ON [usersdata].[user_id] = [borrows].[user_id]
+                        INNER JOIN [books] ON [books].[id] = [borrows].[book_id]
                    WHERE [borrows].[user_id] = %d 
                         ORDER By [borrows].[end];
             ";
         $query=sprintf($qTmp,$this->user_id);
         
+        
+        
         $borrows = $this->db->sql_table($query);
+        
         
         if ($borrows["status"])
         {
-             $this->smarty->assign("borrows",$borrows);
+             $this->smarty->assign("borrows",$borrows["table"]);
              $this->smarty->display("borrow.tpl");           
         }
         else
@@ -72,6 +78,12 @@ class libs extends app {
         }
         
     }
+    
+    public function give_back_fnc($borrow_id)
+    {
+        print_r($borrow_id);
+    }
+    
     
     
     
@@ -129,7 +141,11 @@ class libs extends app {
     }
     
     /**
-     * Pozicanie knihy
+     * Pozicanie knihy.
+     * Funguje tak, ze do db poslem len den pozicania a pocet dni zapozicania, nasledne triggerom sa vytvori
+     * datum konca zapozicky a z poctu kusov sa odrata jeden kus....
+     * vid tabulka borrows a trigger before insert...
+     * vyhoda je nemusim sa v PHP kode starat o odratavanie kusov a sledovanie inych veci....
      * 
      * @param int $id idecko knihy
      */
@@ -229,6 +245,16 @@ class libs extends app {
       
     
     
+    /**
+     * Hladanie knih.
+     * 
+     * t.c. velmi primitivne, ale hlada sa dla nazvu, autora a ISBN. Jedna sa o obycajny LIKE. 
+     * Tu je nutne spravit tzv. inteligentny search sojeni s AJAXOM ev citackou ciarovych kodov
+     * Vysledkom v search.tpl je tabulka z ktorej sa da kniha z editovat, pozicat (tu len za predpokladu ze je viac kusov ako 0, vid search.tpl)
+     * alebo zmazat....
+     * 
+     * @param array $request pole s postu stranky
+     */
     private function searchBooks($request)
     {
         $searchIn = $request["searchin"];

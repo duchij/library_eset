@@ -11,7 +11,7 @@ class init {
     
     /**
      * 
-     * Funkcia zavola triedu a instancuje dla formularu ktory ju zavolal a odovzda jej webovsky request
+     * Funkcia zavola triedu a instancuje dla formularu ktory ju zavolal a odovzda jej webovsky request.
      * 
      * @param array $data REQUEST data
      * 
@@ -27,7 +27,7 @@ class init {
             $obj->startPage($data);
             
         }
-        else  //fallback class
+        else  //fallback trieda
         {
             $cls = "libs";
             require_once $cls.'.class.php';

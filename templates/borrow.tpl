@@ -28,12 +28,25 @@
 			
 			<form name="form1" method='post' action="app.php">
 			<input type="hidden" name="class" value="libs">
-
-			     {foreach from=$borrow key=i item=row}
-					
-
-			     {/foreach}	
+				<table width="100%">
+				<tr>
+					<th>Nazov</th>
+					<th>Pozicana od</th>
+					<th>Pozicana do</th>
+					<th>Uzivatel</th>
+					<th>Akcia</th>
+					</tr>
 				
+			     {foreach from=$borrows key=i item=row}
+					<tr>
+						<td>{$row.nazov}</td>
+						<td>{$row.start}</td>
+						<td>{$row.end}</td>
+						<td>{$row.cele_meno}</td>
+						<td><button name="give_back_fnc" value="{$row.id}">Vratit</button></td>
+					</tr>
+			     {/foreach}	
+				</table>
 			</form>
 		</div>
 		<div id="content-right">
