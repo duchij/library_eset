@@ -1,20 +1,14 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-15 19:35:33
+<?php /* Smarty version 2.6.28, created on 2015-03-16 20:41:29
          compiled from search.tpl */ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 
-<link rel="stylesheet" type="text/css" href="css/layout.css" >
-
-<!-- <link rel="stylesheet" type="text/css" href="js/src/fancyfields.css" > -->
+<link rel="stylesheet" type="text/css" href="css/layout.css">
 
 <meta charset="UTF-8">
-<title>Abstrakter - Pridaj kongress</title>	
-<script src="js/abstracter.js"></script>
-
-<!-- <script src="js/jquery.js"></script>
-<script src="js/src/fancyfields-1.2.min.js"></script> -->
+<title>Kniznica - hladaj</title>	
 
 </head>
 <body>

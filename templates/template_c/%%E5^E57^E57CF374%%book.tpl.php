@@ -1,15 +1,13 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-16 14:37:27
+<?php /* Smarty version 2.6.28, created on 2015-03-16 20:40:45
          compiled from book.tpl */ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
  
-<link rel="stylesheet" type="text/css" ref="css/layout.css" >
 <meta charset="UTF-8">
 <title>Kniznica - pridaj/edituj knihu</title>	
-<!-- <script src="js/jquery.js"></script>
-<script src="js/src/fancyfields-1.2.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="css/layout.css">
 
 </head>
 <body>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Kniznica - zapozicane knihy</title>	
-<style type="text/stylesheet"  src="css/layout.css"></style>
+<link rel="stylesheet" type="text/css" href="css/layout.css">
 
 <!-- <script src="js/jquery.js"></script>
 <script src="js/src/fancyfields-1.2.min.js"></script> -->

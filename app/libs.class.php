@@ -50,9 +50,27 @@ class libs extends app {
     
     private function showBorrowedBooks($data)
     {
-        $query = "SELECT * FROM [borrows] 
-                        INNER JOIN [users] ON [users.id] = [borrows].[user_id]
+        $qTmp = "SELECT * FROM [borrows] 
+                        INNER JOIN [users] ON [user_id] = [borrows].[user_id]
+                        INNER JOIN [books] ON [book_id] = [borrows].[book_id]
+                   WHERE [borrows].[user_id] = %d 
+                        ORDER By [borrows].[end];
             ";
+        $query=sprintf($qTmp,$this->user_id);
+        
+        $borrows = $this->db->sql_table($query);
+        
+        if ($borrows["status"])
+        {
+             $this->smarty->assign("borrows",$borrows);
+             $this->smarty->display("borrow.tpl");           
+        }
+        else
+        {
+            $this->smarty->assign("message",$borrows["error"]);
+            $this->smarty->display("borrow.tpl");
+        }
+        
     }
     
     
@@ -79,8 +97,6 @@ class libs extends app {
             $this->smarty->assign("book",$row);
             $this->smarty->display("book.tpl");
         }
-        
-        
     }
     
     public function borrow_fnc($id,$data)

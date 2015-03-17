@@ -3,7 +3,7 @@
 
 <head>
 
-<style type="text/stylesheet"  src="css/layout.css"></style>>
+<link rel="stylesheet" type="text/css" href="css/layout.css">
 
 <meta charset="UTF-8">
 <title>Kniznica - hladaj</title>	
